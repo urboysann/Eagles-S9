@@ -1,8 +1,11 @@
+"use client";
+import React from 'react';
+
 export default function Features() {
   const features = [
     {
       title: "Community-Driven",
-      desc: "PNB Eagles berkembang melalui dukungan dan energi mahasiswa yang haus akan kompetisi.",
+      desc: "PNB EAGLES berkembang melalui dukungan dan energi player yang haus akan kompetisi.",
       icon: "🏆",
     },
     {
@@ -12,12 +15,12 @@ export default function Features() {
     },
     {
       title: "Strategic Growth",
-      desc: "Kami bukan sekadar bermain; kami membangun mentalitas pemenang dan kerja sama tim yang solid.",
+      desc: "Kami bukan sekadar bermain rapi kami membangun mentalitas pemenang dan kerja sama tim yang solid.",
       icon: "📈",
     },
     {
       title: "Local Pride",
-      desc: "Membawa nama harum jurusan dan Politeknik Negeri Bali melalui prestasi di bidang eSports.",
+      desc: "Membawa nama harum instansi melalui prestasi di bidang E-Sports.",
       icon: "📍",
     },
     {
@@ -40,7 +43,7 @@ export default function Features() {
             Why <span className="text-[#FF50C1]">PNB EAGLES</span> Matters
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            Membangun warisan eSports mahasiswa yang kompetitif, sportif, dan berprestasi.
+            Membangun warisan E-Sports yang kompetitif, sportif, dan berprestasi.
           </p>
         </div>
 
@@ -50,18 +53,18 @@ export default function Features() {
               key={index} 
               className="group p-8 rounded-2xl bg-[#2F0E24]/20 border border-white/5 hover:border-[#FF50C1]/50 transition-all duration-300 relative overflow-hidden"
             >
-              {/* Efek Cahaya Magenta Saat Hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#FF50C1]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               
               <div className="text-3xl mb-6 inline-block p-4 rounded-xl bg-white/5 group-hover:bg-[#FF50C1]/10 transition-colors">
                 {item.icon}
               </div>
               
-              <h3 className="text-xl font-bold mb-4 group-hover:text-[#FF50C1] transition-colors">
+              <h3 className="text-xl font-bold mb-4 group-hover:text-[#FF50C1] transition-colors uppercase italic tracking-tight">
                 {item.title}
               </h3>
               
-              <p className="text-gray-400 text-sm leading-relaxed">
+              {/* PERBAIKAN: Menambahkan 'text-justify' untuk rata kiri-kanan */}
+              <p className="text-gray-400 text-sm leading-relaxed text-justify">
                 {item.desc}
               </p>
             </div>

@@ -10,7 +10,7 @@ export default function StepByStep() {
       id: "02",
       tagline: "Stand Out",
       title: "Lengkapi Data Diri & Tim Anda",
-      desc: "Siapkan data diri anggota, foto KTM aktif, dan informasi tim lainnya untuk diunggah ke formulir saat pendaftaran lomba.",
+      desc: "Siapkan data diri anggota, foto identitas aktif, dan informasi tim lainnya untuk diunggah ke Google Form saat pendaftaran lomba.",
     },
     {
       id: "03",
@@ -42,11 +42,9 @@ export default function StepByStep() {
                   {step.tagline}
                 </span>
                 <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-8">
+                <p className="text-gray-400 text-sm leading-relaxed mb-8 text-justify">
                   {step.desc}
                 </p>
-                
-                {/* Visual Garis Progress di bawah seperti referensi */}
                 <div className="relative h-[2px] w-full bg-white/10 mt-auto">
                   <div className="absolute top-0 left-0 h-full w-1/3 bg-[#FF50C1] group-hover:w-full transition-all duration-500" />
                   <div className="absolute -top-1 left-0 w-3 h-3 bg-[#FF50C1] rounded-full shadow-[0_0_10px_#FF50C1]" />

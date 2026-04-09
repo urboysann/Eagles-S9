@@ -14,13 +14,13 @@ export default function Theme() {
           </div>
           
           <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight mb-8">
-            Masuki Arena. Masa Depan <br />
+            Masuki Arena. <br />Masa Depan <br />
             <span className="text-[#FF50C1]">PNB EAGLES</span> Mulai Di Sini.
           </h2>
 
-          <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-2xl">
-            Baik kamu bertanding untuk mengejar juara, menciptakan konten, atau sekadar mendukung tim jurusanmu, 
-            PNB EAGLES adalah titik awal menuju masa depan kompetisi di kampus. Jadilah bagian dari legenda 
+          <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-2xl text-justify">
+            Baik kamu bertanding untuk mengejar juara, menciptakan konten, atau sekadar mendukung tim kamu, 
+            PNB EAGLES adalah titik awal menuju masa depan kompetisi di arena. Jadilah bagian dari legenda 
             yang digerakkan oleh ambisi, skill, dan semangat generasi pemain baru.
           </p>
 

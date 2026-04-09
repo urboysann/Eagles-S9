@@ -8,12 +8,12 @@ import Games from "../components/Games";
 import Seminar from "../components/Seminar";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
+import Sponsor from "../components/Sponsor";
 
 export default function Home() {
   return (
     <main className="relative">
       <Navbar />
-      {/* Content Sections */}
       <Hero />
       <About />
       <Features />
@@ -22,6 +22,7 @@ export default function Home() {
       <Games />
       <Seminar />
       <FAQ />
+      <Sponsor />
       <Footer />
     </main>
   );
