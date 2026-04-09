@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from 'react'; // Tambahkan useState
-import { Menu, X } from 'lucide-react'; // Tambahkan icon untuk mobile
+import React, { useState } from 'react'; 
+import { Menu, X } from 'lucide-react'; 
 import Link from 'next/link';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false); // State untuk menu mobile
+  const [isOpen, setIsOpen] = useState(false); 
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#070707]/80 backdrop-blur-md border-b border-white/5 py-4 px-6">
@@ -21,13 +21,29 @@ export default function Navbar() {
 
         {/* MENU NAVIGASI (DESKTOP) */}
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/#home" className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta transition-colors">HOME</Link>
-          <Link href="/#about" className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta transition-colors">ABOUT</Link>
-          <Link href="/#games" className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta transition-colors">TOURNAMENTS</Link>
-          <Link href="/#faq" className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta transition-colors">FAQ</Link>
+          <Link href="/#home" className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta transition-colors">
+            HOME
+          </Link>
+          <Link href="/#about" className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta transition-colors">
+            ABOUT
+          </Link>
+          
+          {/* TOURNAMENTS */}
+          <Link href="/#games" className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta transition-colors">
+            TOURNAMENTS
+          </Link>
+
+          {/* SEMINAR (Di sebelah kanan Tournaments) */}
+          <Link href="/#seminar" className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta transition-colors">
+            SEMINAR
+          </Link>
+          
+          <Link href="/#faq" className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta transition-colors">
+            FAQ
+          </Link>
         </div>
 
-        {/* BUTTON DAFTAR (TAMPIL DI DESKTOP) */}
+        {/* BUTTON DAFTAR (DESKTOP) */}
         <div className="hidden md:block">
           <button className="px-6 py-2 bg-white text-black text-[10px] font-black tracking-widest uppercase rounded-lg hover:bg-magenta hover:text-white transition-all">
             DAFTAR SEKARANG
@@ -36,7 +52,7 @@ export default function Navbar() {
 
         {/* HAMBURGER BUTTON (MOBILE ONLY) */}
         <div className="md:hidden flex items-center">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -45,11 +61,22 @@ export default function Navbar() {
       {/* MOBILE MENU DROPDOWN */}
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-[#070707] border-b border-white/5 p-6 flex flex-col gap-6 animate-in slide-in-from-top duration-300">
-          <Link href="/#home" onClick={() => setIsOpen(false)} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta">HOME</Link>
-          <Link href="/#about" onClick={() => setIsOpen(false)} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta">ABOUT</Link>
-          <Link href="/#games" onClick={() => setIsOpen(false)} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta">TOURNAMENTS</Link>
-          <Link href="/#faq" onClick={() => setIsOpen(false)} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta">FAQ</Link>
-          <button className="w-full py-3 bg-white text-black text-[10px] font-black tracking-widest uppercase rounded-lg">
+          <Link href="/#home" onClick={() => setIsOpen(false)} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta">
+            HOME
+          </Link>
+          <Link href="/#about" onClick={() => setIsOpen(false)} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta">
+            ABOUT
+          </Link>
+          <Link href="/#games" onClick={() => setIsOpen(false)} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta">
+            TOURNAMENTS
+          </Link>
+          <Link href="/#seminar" onClick={() => setIsOpen(false)} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta">
+            SEMINAR
+          </Link>
+          <Link href="/#faq" onClick={() => setIsOpen(false)} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 hover:text-magenta">
+            FAQ
+          </Link>
+          <button className="w-full py-3 bg-white text-black text-[10px] font-black tracking-widest uppercase rounded-lg active:scale-95 transition-transform">
             DAFTAR SEKARANG
           </button>
         </div>

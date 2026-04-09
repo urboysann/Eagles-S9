@@ -1,9 +1,37 @@
 "use client";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Users, Info, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Users, Info, ArrowRight, Lock } from "lucide-react";
 import Link from "next/link";
 
 export default function Seminar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
+
+  // Tanggal buka pendaftaran: 18 April 2026 00:00:00
+  const OPENING_DATE = new Date("2026-04-18T00:00:00").getTime();
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = OPENING_DATE - now;
+
+      if (distance < 0) {
+        setIsOpen(true);
+        clearInterval(timer);
+      } else {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          mins: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          secs: Math.floor((distance % (1000 * 60)) / 1000),
+        });
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [OPENING_DATE]);
+
   return (
     <section id="seminar" className="py-24 bg-[#070707] px-6 overflow-visible">
       <div className="max-w-7xl mx-auto">
@@ -28,23 +56,40 @@ export default function Seminar() {
               Bukan sekadar hobi, tapi peluang profesi. Bergabunglah dalam <span className="text-white font-bold italic underline decoration-magenta">Seminar Nasional Beyond Limits</span> dan temukan rahasia industri kreatif langsung dari para ahli.
             </p>
 
-            {/* TOMBOL (DIPERBAIKI AGAR SEJAJAR/SAMA PANJANG) */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full max-w-xl">
-              <Link 
-                href="https://forms.gle/link-google-form-kamu" 
-                target="_blank"
-                className="flex-1 px-8 py-4 bg-magenta text-white font-black text-[10px] tracking-[0.2em] uppercase rounded-xl hover:bg-white hover:text-black transition-all flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(255,80,193,0.3)]"
-              >
-                Daftar Sekarang <ArrowRight size={16} />
-              </Link>
+            {/* TOMBOL AREA */}
+            <div className="flex flex-col sm:row gap-4 w-full max-w-xl">
+              {isOpen ? (
+                /* TOMBOL AKTIF */
+                <Link 
+                  href="https://forms.gle/link-google-form-kamu" 
+                  target="_blank"
+                  className="flex-1 px-8 py-4 bg-magenta text-white font-black text-[10px] tracking-[0.2em] uppercase rounded-xl hover:bg-white hover:text-black transition-all flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(255,80,193,0.3)]"
+                >
+                  Daftar Sekarang <ArrowRight size={16} />
+                </Link>
+              ) : (
+                /* TOMBOL DISABLED DENGAN COUNTDOWN */
+                <button 
+                  disabled
+                  className="flex-1 px-8 py-4 bg-white/5 border border-white/10 text-gray-500 font-black text-[10px] tracking-[0.2em] uppercase rounded-xl flex flex-col items-center justify-center gap-1 cursor-not-allowed"
+                >
+                  <div className="flex items-center gap-2">
+                    <Lock size={14} className="text-gray-600" />
+                    <span>Pendaftaran Dibuka Dalam:</span>
+                  </div>
+                  <div className="text-white text-sm font-outfit tracking-widest">
+                    {timeLeft.days}D : {timeLeft.hours}H : {timeLeft.mins}M : {timeLeft.secs}S
+                  </div>
+                </button>
+              )}
               
-              <Link 
+              {/* <Link 
                 href="/seminar"
                 className="flex-1 px-8 py-4 border border-white/10 text-white font-black text-[10px] tracking-[0.2em] uppercase rounded-xl hover:bg-white/5 transition-all flex items-center justify-center gap-3 font-outfit group"
               >
                 <Info size={16} className="text-magenta group-hover:scale-110 transition-transform" /> 
                 Lihat Selengkapnya
-              </Link>
+              </Link> */}
             </div>
           </div>
 

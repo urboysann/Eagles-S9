@@ -25,7 +25,7 @@ export default function Theme() {
           </p>
 
           <div className="flex flex-wrap gap-6 items-center">            
-            <a href="#" className="text-sm font-bold uppercase tracking-widest border-b-2 border-[#FF50C1] pb-1 hover:text-[#FF50C1] transition-colors">
+            <a href="/#games" className="text-sm font-bold uppercase tracking-widest border-b-2 border-[#FF50C1] pb-1 hover:text-[#FF50C1] transition-colors">
               Pelajari Format Lomba
             </a>
           </div>
