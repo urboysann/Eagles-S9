@@ -16,15 +16,12 @@ function Counter({ value }: { value: number }) {
 
 export default function Hero() {
   return (
-    /* 1. Gunakan min-h-screen agar konten pas satu layar penuh */
     <section className="relative min-h-screen w-full flex flex-col items-center justify-center bg-[#070707] pt-20 pb-10 overflow-hidden">
       
-      {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-magenta/10 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="text-center z-10 px-6 max-w-6xl w-full flex flex-col items-center justify-between h-full">
-        
-        {/* TOP CONTENT */}
+
         <div className="flex-1 flex flex-col items-center justify-center">
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
@@ -33,8 +30,7 @@ export default function Hero() {
           >
             #BreakYourLimits
           </motion.div>
-          
-          {/* 2. Ukuran font disesuaikan agar tidak kepotong di mobile */}
+
           <h1 className="text-5xl md:text-7xl lg:text-[8rem] font-black italic leading-[0.9] uppercase mb-8 font-outfit tracking-tighter pb-4">
             <span className="text-white">PNB</span> <span className="text-magenta drop-shadow-[0_0_30px_rgba(255,80,193,0.5)]">EAGLES</span> <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-600 block">SEASON 9</span>
@@ -45,7 +41,6 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* BOTTOM STATS: Dipastikan terlihat di area bawah layar pertama */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-10 border-t border-white/10 w-full mt-auto">
           <div className="flex flex-col items-center">
             <h3 className="text-5xl md:text-6xl font-black italic text-white leading-none font-outfit tracking-tighter">

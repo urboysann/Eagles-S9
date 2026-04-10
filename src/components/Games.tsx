@@ -121,13 +121,13 @@ export default function Games() {
                     rel="noopener noreferrer" 
                     className="block"
                   >
-                    <button className="w-full py-3.5 bg-magenta text-white font-black text-[10px] tracking-[0.2em] uppercase rounded-xl hover:bg-white hover:text-black transition-all shadow-[0_0_20px_rgba(255,80,193,0.3)]">
+                    <button className="w-full py-3.5 bg-magenta text-white font-black text-[10px] tracking-[0.2em] uppercase rounded-xl hover:bg-white hover:text-black transition-all shadow-[0_0_20px_rgba(255,80,193,0.3)] cursor-pointer">
                       Daftar Sekarang
                     </button>
                   </a>
 
                   <Link href={`/games/${game.slug}`} className="block">
-                    <button className="w-full py-3.5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[10px] tracking-[0.2em] uppercase rounded-xl hover:bg-white/20 transition-all">
+                    <button className="w-full py-3.5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-[10px] tracking-[0.2em] uppercase rounded-xl hover:bg-white/20 transition-all cursor-pointer">
                       Lihat Selengkapnya
                     </button>
                   </Link>

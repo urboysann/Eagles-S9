@@ -8,7 +8,7 @@ const timelineEvents = [
     id: 1,
     title: "Pendaftaran Turnamen",
     date: "11 April - 04 Mei 2026",
-    desc: "Waktu resmi bagi tim untuk mengamankan slot di arena pertandingan.",
+    desc: "Waktu resmi bagi tim atau peserta untuk mengamankan slot di arena pertandingan.",
     icon: <Rocket size={20} />,
     type: "Tournament"
   },
@@ -16,7 +16,7 @@ const timelineEvents = [
     id: 2,
     title: "Pendaftaran Seminar",
     date: "18 April - 08 Mei 2026",
-    desc: "Registrasi Seminar Nasional 'The Future of Gaming' resmi dibuka.",
+    desc: "Registrasi Seminar Nasional 'Beyond Limits' resmi dibuka.",
     icon: <Users size={20} />,
     type: "Seminar"
   },
@@ -24,7 +24,7 @@ const timelineEvents = [
     id: 3,
     title: "Technical Meeting",
     date: "19 Mei - 20 Mei 2026",
-    desc: "Pembahasan aturan main dan jadwal tanding untuk seluruh peserta lomba.",
+    desc: "Pembahasan aturan turnamen dan jadwal tanding untuk seluruh peserta lomba, dilakukan secara online melalui platform Zoom Meeting.",
     icon: <Target size={20} />,
     type: "Tournament"
   },
@@ -32,15 +32,15 @@ const timelineEvents = [
     id: 4,
     title: "Kualifikasi MLBB & PUBGM",
     date: "22 Mei 2026",
-    desc: "Babak penyisihan sengit untuk menentukan siapa yang layak ke Grand Final.",
+    desc: "Babak penyisihan sengit untuk menentukan siapa yang layak ke Grand Final, dilakukan secara online.",
     icon: <Trophy size={20} />,
     type: "Tournament"
   },
   {
     id: 5,
-    title: "Final Lomba",
+    title: "Final Seluruh Cabang Lomba",
     date: "23 Mei 2026",
-    desc: "Puncak pertandingan turnamen di Gedung Widya Padma.",
+    desc: "Puncak pertandingan turnamen di Gedung Widya Padma, Kampus Politeknik Negeri Bali.",
     icon: <Calendar size={20} />,
     type: "Tournament"
   },
@@ -48,7 +48,7 @@ const timelineEvents = [
     id: 6,
     title: "Seminar Nasional & Awarding",
     date: "24 Mei 2026",
-    desc: "Acara puncak seminar bersama para ahli industri kreatif.",
+    desc: "Acara puncak seminar bersama para ahli industri E-Sport dan Sesi awarding untuk para juara turnamen.",
     icon: <Presentation size={20} />,
     type: "Seminar & Awarding"
   }
@@ -70,23 +70,21 @@ export default function Timeline() {
           </h3>
             <p className="text-gray-400 font-montserrat text-sm leading-relaxed max-w-[340px] text-justify">
             Jadilah <span className="text-white font-semibold">lebih dari sekadar pemain</span>. 
-            Pantau seluruh rangkaian kegiatan <span className="text-white">PNB EAGLES Season 9</span>, 
+            Pantau seluruh rangkaian kegiatan <span className="text-white">PNB EAGLES Season 9</span>,
             dimana arena kompetisi bertemu dengan pusat inovasi. 
             
-            Persiapkan strategimu untuk <span className="text-white border-b border-white/20">menguasai turnamen</span>, 
+            Persiapkan strategimu untuk <span className="text-white border-b border-white/20">menguasai turnamen</span>,
             sekaligus tajamkan wawasanmu melalui Seminar Nasional <span className="text-magenta font-bold italic drop-shadow-[0_0_8px_rgba(255,80,193,0.4)]">
                 'Beyond Limits'
-            </span> bersama para ahli industri. 
+            </span> bersama para ahli industri.
             
             Dari registrasi hingga awarding, pastikan kamu hadir di setiap momen untuk mendominasi masa depan digital!
             </p>
         </div>
 
-        {/* SISI KANAN: LIST TIMELINE */}
         <div className="md:w-2/3 relative pl-8 md:pl-12">
-          {/* GARIS VERTIKAL */}
           <div className="absolute left-0 top-0 h-full w-[1px] bg-white/10">
-            <div className="absolute top-0 left-0 w-full h-1/4 bg-gradient-to-b from-magenta to-transparent" />
+            <div className="absolute top-0 left-0 w-full h-3/4 bg-gradient-to-b from-magenta to-transparent" />
           </div>
 
           <div className="space-y-12">

@@ -37,8 +37,18 @@ export default function Features() {
     },
   ];
 
-  // Inisialisasi Carousel dengan Autoplay
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 4000 })]);
+  // Carousel setup dengan Autoplay
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { 
+      loop: true, 
+      align: "start",
+      breakpoints: {
+        '(min-width: 768px)': { slidesToScroll: 1 }
+      }
+    }, 
+    [Autoplay({ delay: 4000, stopOnInteraction: false })]
+  );
+  
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
@@ -55,13 +65,19 @@ export default function Features() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section id="features" className="py-24 px-6 bg-[#070707]">
-      <div className="max-w-7xl mx-auto">
+    <section id="features" className="py-24 px-6 bg-[#0a050a] relative overflow-hidden">
+      {/* Efek Ambient Glow Magenta di latar belakang agar konsisten dengan section lain */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF50C1]/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter">
-            Why <span className="text-[#FF50C1]">PNB EAGLES</span> Matters
+          {/* Judul diatur menjadi 2-3 baris di mobile dengan max-width dan <br/> */}
+          <h2 className="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter leading-[1.1] md:leading-tight max-w-[280px] md:max-w-none mx-auto text-white font-outfit">
+            Why <br className="md:hidden" /> 
+            <span className="text-[#FF50C1] drop-shadow-[0_0_15px_rgba(255,80,193,0.3)]">PNB EAGLES</span> 
+            <br className="md:hidden" /> Matters
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
+          <p className="text-gray-400 max-w-xl mx-auto text-sm md:text-base font-montserrat">
             Membangun warisan E-Sports yang kompetitif, sportif, dan berprestasi.
           </p>
         </div>
@@ -74,18 +90,22 @@ export default function Features() {
                 key={index} 
                 className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] lg:flex-[0_0_33.33%] px-3"
               >
-                <div className="group h-full p-8 rounded-2xl bg-[#2F0E24]/20 border border-white/5 hover:border-[#FF50C1]/50 transition-all duration-300 relative overflow-hidden">
+                <div className="group h-full p-8 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#FF50C1]/50 transition-all duration-300 relative overflow-hidden backdrop-blur-sm">
+                  {/* Hover Gradient Effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#FF50C1]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   
-                  <div className="text-3xl mb-6 inline-block p-4 rounded-xl bg-white/5 group-hover:bg-[#FF50C1]/10 transition-colors">
+                  {/* Icon Container */}
+                  <div className="text-3xl mb-6 inline-block p-4 rounded-xl bg-white/5 group-hover:bg-[#FF50C1]/10 transition-colors shadow-inner">
                     {item.icon}
                   </div>
                   
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-[#FF50C1] transition-colors uppercase italic tracking-tight">
+                  {/* Feature Title */}
+                  <h3 className="text-xl font-bold mb-4 group-hover:text-[#FF50C1] transition-colors uppercase italic tracking-tight text-white font-outfit">
                     {item.title}
                   </h3>
                   
-                  <p className="text-gray-400 text-sm leading-relaxed text-justify">
+                  {/* Feature Description */}
+                  <p className="text-gray-400 text-sm leading-relaxed text-justify font-montserrat">
                     {item.desc}
                   </p>
                 </div>
@@ -95,14 +115,14 @@ export default function Features() {
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mt-10">
+        <div className="flex justify-center gap-2 mt-12">
           {scrollSnaps.map((_, index) => (
             <button
               key={index}
               onClick={() => emblaApi?.scrollTo(index)}
               className={`h-1.5 transition-all duration-300 rounded-full ${
                 index === selectedIndex 
-                ? "w-8 bg-[#FF50C1]" 
+                ? "w-8 bg-[#FF50C1] shadow-[0_0_10px_rgba(255,80,193,0.5)]" 
                 : "w-2 bg-white/20 hover:bg-white/40"
               }`}
               aria-label={`Go to slide ${index + 1}`}

@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "Apakah ada biaya pendaftaran untuk Seminar atau Lomba?",
-    answer: "Informasi detail mengenai biaya pendaftaran (jika ada) untuk masing-masing kategori Seminar maupun Turnamen dapat kamu cek langsung melalui Google Form pendaftaran yang tersedia.",
+    answer: "Informasi detail mengenai biaya pendaftaran untuk masing-masing kategori Seminar maupun Turnamen dapat kamu cek langsung melalui Google Form pendaftaran yang tersedia.",
   },
   {
     question: "Di mana saya bisa mendapatkan guidebook perlombaan & seminar?",
@@ -53,7 +53,7 @@ export default function FAQ() {
             >
               <button 
                 onClick={() => toggleFAQ(index)}
-                className="w-full p-6 text-left flex justify-between items-center group transition-colors"
+                className="w-full p-6 text-left flex justify-between items-center group transition-colors cursor-pointer"
               >
                 <span className="font-bold text-lg pr-4">{index + 1}. {item.question}</span>
                 <span className={`text-2xl text-[#FF50C1] font-light transform transition-transform duration-300 ${openIndex === index ? 'rotate-45' : 'rotate-0'}`}>

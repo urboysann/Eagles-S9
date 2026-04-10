@@ -73,13 +73,13 @@ export default function Footer() {
               Stay Connected
             </h4>
             <div className="flex justify-start gap-4">
-              <a href="https://instagram.com" target="_blank" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-magenta hover:border-magenta transition-all duration-300">
+              <a href="https://www.instagram.com/pnbeagles" target="_blank" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-magenta hover:border-magenta transition-all duration-300">
                 <Instagram size={18} />
               </a>
-              <a href="https://youtube.com" target="_blank" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-magenta hover:border-magenta transition-all duration-300">
+              <a href="https://www.youtube.com/@ukmcomputerclub" target="_blank" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-magenta hover:border-magenta transition-all duration-300">
                 <Youtube size={18} />
               </a>
-              <a href="https://tiktok.com" target="_blank" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-magenta hover:border-magenta transition-all duration-300">
+              <a href="https://www.tiktok.com/@ukmcomputerclub" target="_blank" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-magenta hover:border-magenta transition-all duration-300">
                 <Music2 size={18} />
               </a>
             </div>

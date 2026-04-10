@@ -27,7 +27,7 @@ export default function About() {
               <strong className="text-white">PNB EAGLES Season 9</strong> adalah program kerja Unit Kegiatan Mahasiswa Computer Club yang didesain sebagai ekosistem E-Sports terbesar di Bali.
             </p>
             <p>
-              Kami percaya hobi bermain game memiliki potensi ekonomi luar biasa. Melalui <span className="text-white font-bold underline decoration-magenta">Seminar Nasional Beyond Limits,</span> kamu akan mengeksplorasi cara menghasilkan uang dari industri game, mulai dari content creation hingga manajemen event.
+              Kami percaya hobi bermain game memiliki potensi ekonomi luar biasa. Melalui <span className="text-white font-bold">Seminar Nasional Beyond Limits,</span> kamu akan mengeksplorasi cara menghasilkan uang dari industri game, mulai dari content creation hingga manajemen event.
             </p>
             
             <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
